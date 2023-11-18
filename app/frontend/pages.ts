@@ -14,6 +14,5 @@ export async function resolvePage(name: string) {
   }
 
   page.default.layout = page.default.layout || Layout; // This line
-  console.log('SSR TEST', (import.meta as any).env.SSR);
   return (import.meta as any).env.SSR ? page : (await page).default;
 }
